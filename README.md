@@ -141,6 +141,6 @@ Os artefatos de modelo treinados (Random Forest, XGBoost, Isolation Forest, MLP 
 Para a realização desta pesquisa, foram utilizados agentes de inteligência artificial (ChatGPT, Gemini) para auxiliar em tarefas como codificação, fichamento de informações de melhorias e correção textual e formatação de referências
 .
 ✉️ Contato
-• Rosemeri Janiski Bida de Oliveira Borges: rose.jbob@gmail.com
+• Rosemeri Borges: rose.jbob@gmail.com
 📄 Licença
 Este projeto é licenciado sob a licença, como o artigo de Fernandes Jr. et al. (2024).
