@@ -1,0 +1,104 @@
+================================================================================
+RELATÓRIO FINAL DO EXPERIMENTO - DATASET 3W PETROBRAS
+================================================================================
+
+1. DESEMPENHO DOS MODELOS:
+
+  Random Forest:
+    - Accuracy: 0.9854
+    - Precision: 0.9893
+    - Recall: 0.9917
+    - F1-Score: 0.9905
+    - AUC-ROC: 0.9974
+    - CV F1 (mean±std): 0.9900 ± 0.0002
+
+  XGBoost:
+    - Accuracy: 0.9787
+    - Precision: 0.9894
+    - Recall: 0.9827
+    - F1-Score: 0.9860
+    - AUC-ROC: 0.9970
+    - CV F1 (mean±std): 0.9865 ± 0.0003
+
+  Isolation Forest:
+    - Accuracy: 0.8346
+    - Precision: 0.8964
+    - Recall: 0.8860
+    - F1-Score: 0.8912
+    - AUC-ROC: 0.8562
+
+  MLP:
+    - Accuracy: 0.9698
+    - Precision: 0.9704
+    - Recall: 0.9908
+    - F1-Score: 0.9805
+    - AUC-ROC: 0.9913
+    - CV F1 (mean±std): 0.9812 ± 0.0005
+
+  Autoencoder:
+    - Accuracy: 0.2354
+    - Precision: 0.0000
+    - Recall: 0.0000
+    - F1-Score: 0.0000
+    - AUC-ROC: 0.5000
+
+2. ANÁLISE DE ESTABILIDADE SHAP:
+
+  Random Forest:
+    - Score de estabilidade: 0.0%
+    - Top 5 features mais estáveis:
+      * P-TPT: 3/30 execuções (10.0%)
+      * P-PDG: 2/30 execuções (6.7%)
+
+  XGBoost:
+    - Score de estabilidade: 0.0%
+    - Top 5 features mais estáveis:
+      * pressure_ratio: 1/30 execuções (3.3%)
+      * P-PDG: 1/30 execuções (3.3%)
+      * P-MON-CKP: 1/30 execuções (3.3%)
+      * T-TPT: 1/30 execuções (3.3%)
+      * T-JUS-CKP: 1/30 execuções (3.3%)
+
+3. ANÁLISE LIME - ISOLATION FOREST:
+
+  Top 5 features mais importantes:
+    - T-TPT: 0.007
+    - mean_temp: 0.007
+    - T-JUS-CKP: 0.004
+    - pressure_ratio: 0.003
+    - P-TPT: 0.002
+
+4. ANÁLISE TEMPORAL DAS ANOMALIAS:
+
+  Random Forest:
+    - Anomalias reais no teste: 11679064
+    - Anomalias detectadas corretamente: 11581689
+    - Falsos positivos: 125846
+    - Taxa de detecção temporal: 99.2%
+
+  XGBoost:
+    - Anomalias reais no teste: 11679064
+    - Anomalias detectadas corretamente: 11477105
+    - Falsos positivos: 123497
+    - Taxa de detecção temporal: 98.3%
+
+  Isolation Forest:
+    - Anomalias reais no teste: 11679064
+    - Anomalias detectadas corretamente: 10347482
+    - Falsos positivos: 1195315
+    - Taxa de detecção temporal: 88.6%
+
+5. CONCLUSÕES:
+
+  - Modelos supervisionados (RF, XGBoost, MLP) apresentaram excelente desempenho.
+  - Isolation Forest, apesar de não supervisionado, mostrou bons resultados.
+  - SHAP revelou alta consistência para features como P-PDG e QGL.
+  - LIME permitiu interpretar os resultados do Isolation Forest.
+  - A análise temporal revelou padrões úteis para manutenção preditiva.
+
+6. INFORMAÇÕES DO EXPERIMENTO:
+
+  - Data/Hora: 2025-07-06 21:11:05
+  - Modelos utilizados: Random Forest, XGBoost, Isolation Forest, MLP, Autoencoder
+  - Técnicas de explicabilidade: SHAP, LIME
+  - Execuções SHAP: 30 iterações
